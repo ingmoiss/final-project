@@ -7,11 +7,14 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
+import { SignUp } from "./pages/sign-up.jsx"; //Include SignUp
 
 import { Navbar } from "./component/navbar";
 import { Experiences } from "./pages/footer";
 import { Dogs } from "./component/dogs";
 import { Dog } from "./pages/dog";
+import { Footer } from "./component/footer";
+import { LogIn } from "./pages/log-in.jsx";
 
 //create your first component
 const Layout = () => {
@@ -49,6 +52,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/dog/:id">
 							<Dog data={store.dogs} />
+						</Route>
+						<Route exact path="/sign-up">
+							<SignUp />
+						</Route>
+						<Route exact path="/log-in">
+							<LogIn />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

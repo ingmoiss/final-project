@@ -9,7 +9,7 @@ export const Experiences = () => {
 
 	return (
 		<Container>
-			<div className="card" style={({ width: "18rem" }, { marginTop: "30px" })}>
+			<div className="card" style={({ width: "2px" }, { marginTop: "30px" })}>
 				<ul className="list-group list-group-flush ">
 					<li className="list-group-item text-center">Vive nuestras experiencias</li>
 				</ul>

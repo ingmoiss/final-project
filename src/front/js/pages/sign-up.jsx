@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function SignUp() {
 	const [user_name, setUser] = useState("");
@@ -149,7 +150,9 @@ export function SignUp() {
 			</div>
 			<div className="row mt-3">
 				<div className="col-md">
-					<p className="text-center">Already have an account? Log in</p>
+					<p className="text-center">
+						Already have an account? <Link to="/log-in">Log in</Link>
+					</p>
 				</div>
 			</div>
 		</div>

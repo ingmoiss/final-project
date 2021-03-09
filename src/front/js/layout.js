@@ -10,6 +10,7 @@ import { SignUp } from "./pages/sign-up.jsx"; //Include SignUp
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { LogIn } from "./pages/log-in.jsx";
 
 //create your first component
 const Layout = () => {
@@ -34,6 +35,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/sign-up">
 							<SignUp />
+						</Route>
+						<Route exact path="/log-in">
+							<LogIn />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

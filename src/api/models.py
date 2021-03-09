@@ -35,10 +35,9 @@ class Pets(db.Model):
     pet_type = db.Column(db.String(120), unique=False, nullable=False)
     foundation_worker = db.Column(db.String(120), unique=False, nullable=False)
     descripcition = db.Column(db.String(2000), unique=False, nullable=False)
-    color_hair = db.Column(db.String(80), unique=False, nullable=False)
     age = db.Column(db.Integer, unique=False, nullable=False)
     size =  db.Column(db.Integer, unique=False, nullable=False)
-    cheer_up = db.Column(db.String(2000), unique=False, nullable=False)
+    temperament = db.Column(db.String(2000), unique=False, nullable=False)
     vaccines =  db.Column(db.Boolean(), unique=False, nullable=False)
     gender = db.Column(db.String(80), unique=False, nullable=False)
 
@@ -53,9 +52,9 @@ class Pets(db.Model):
             "pet_type": self.pet_type,
             "foundation_worker": self.foundation_worker,
             "descripcition": self.descripcition,
-            "color_hair": self.color_hair,
             "age": self.age,
             "size": self.size,
+            "temperament": self.temperament,
             "vaccines": self.vaccines,
             "gender": self.gender,
         }

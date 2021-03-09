@@ -44,7 +44,7 @@ class Pets(db.Model):
 
 
     def __repr__(self):
-        return '<User %r>' % self.id
+        return '<Pets %r>' % self.id
 
     def serialize(self):
         return {

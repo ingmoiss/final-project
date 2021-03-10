@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 export function SignUp() {
 	const [user_name, setUser] = useState("");
@@ -8,6 +8,7 @@ export function SignUp() {
 	const [password, setPassword] = useState("");
 	const [phone_number, setPhone] = useState("");
 	const [province, setProvince] = useState("");
+	const [redirect, setRedirect] = useState(false);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -35,7 +36,7 @@ export function SignUp() {
 		};
 
 		//FETCH POST method
-		fetch("URL", {
+		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/sign-up/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -157,6 +158,7 @@ export function SignUp() {
 					</p>
 				</div>
 			</div>
+			{redirect ? <Redirect to="/log-in" /> : ""}
 		</div>
 	);
 }

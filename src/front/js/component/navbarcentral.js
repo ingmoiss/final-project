@@ -12,22 +12,16 @@ export const Navbarcentral = () => {
 						/>
 					</a>
 				</Link>
-				&nbsp;
-				<div id="navbarNav">
-					<ul className="navbar-nav">
-						<li className="nav-item">
-							<button id="iniciar" type="button" className="btn btn-primary">
-								Iniciar Sesion &nbsp;
-								<i className="far fa-user" />
-							</button>
-						</li>
-						<li className="nav-item">
-							<button id="cerrar" type="button" className="btn btn-secondary">
-								Cerrar Sesion &nbsp;
-								<i className="fas fa-sign-in-alt" />
-							</button>
-						</li>
-					</ul>
+				<div className="ml-auto">
+					<button id="iniciar" type="button" className="btn btn-primary mr-1">
+						Iniciar Sesion
+						<i className="far fa-user" />
+					</button>
+
+					<button id="cerrar" type="button" className="btn btn-secondary ml-1 ">
+						Cerrar Sesion
+						<i className="fas fa-sign-in-alt" />
+					</button>
 				</div>
 			</nav>
 		</>

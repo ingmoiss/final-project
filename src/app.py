@@ -10,6 +10,7 @@ from api.utils import APIException, generate_sitemap
 from api.models import db, User
 from api.routes import api
 from api.admin import setup_admin
+import datetime
 #from models import Person
 
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -32,6 +33,7 @@ db.init_app(app)
 
 # Allow CORS requests to this API
 CORS(app)
+jwt = JWTManager(app)
 
 # add the admin
 setup_admin(app)
@@ -104,6 +106,38 @@ def add_user():
         db.session.commit()
         
         return jsonify("Your register was successful!"), 200
+
+@app.route('/log-in/', methods=['POST'])
+def login():
+    if request.method == 'POST':
+        user_name= request.json.get("user_name", None)
+        password = request.json.get("password", None)
+
+        if not user_name:
+            return jsonify("Username is required"), 400
+        if not password:
+            return jsonify("Password is required"), 400
+
+        user = User.query.filter_by(user_name=user_name).first()
+        if not user:
+            return jsonify("Username/Password are incorrect"), 401
+           
+
+        if not check_password_hash(user.password, password):
+            return jsonify("Username/Password are incorrect"), 401
+
+        # Create token
+        expiracion = datetime.timedelta(days=1)
+        access_token = create_access_token(identity=user.user_name, expires_delta=expiracion)
+
+        data = {
+            
+            "token": access_token,
+            "expires": expiracion.total_seconds()*1000,
+            
+        }
+
+        return jsonify(data), 200
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':

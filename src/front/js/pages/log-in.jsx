@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 export function LogIn() {
 	const [user_name, setUser] = useState("");
@@ -19,7 +18,7 @@ export function LogIn() {
 			user_name: user_name
 		};
 
-		fetch("https://3000-silver-landfowl-psjk55on.ws-us03.gitpod.io/log_in/", {
+		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/log-in/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

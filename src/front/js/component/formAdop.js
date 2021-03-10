@@ -10,7 +10,7 @@ export const FormAdop = () => {
 				<div className="row">
 					<div className="col-md">
 						<h1 className="font text-center mb-0 mt-3" style={{ color: "black" }}>
-							Formulario de Adopcion
+							Formulario de Adopción
 						</h1>
 					</div>
 				</div>
@@ -52,10 +52,21 @@ export const FormAdop = () => {
 						</div>
 						<div className="form-row my-2">
 							<div className="col-md">
+								<input
+									type="email"
+									className="form-control form-control-lg"
+									placeholder="Nombre de la mascota"
+									required
+									//onChange={}
+								/>
+							</div>
+						</div>
+						<div className="form-row my-2">
+							<div className="col-md">
 								<div className="form-floating">
 									<textarea
 										className="form-control"
-										placeholder="Descripcion de la mascota"
+										placeholder="Descripción de la mascota"
 										id="floatingTextarea2"
 										style={{ height: "100px" }}
 									/>

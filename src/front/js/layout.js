@@ -9,11 +9,14 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { SignUp } from "./pages/sign-up.jsx"; //Include SignUp
 
+import { Navbarcentral } from "./component/navbarcentral";
 import { Navbar } from "./component/navbar";
 import { Experiences } from "./pages/footer";
 import { Dogs } from "./component/dogs";
 import { Dog } from "./pages/dog";
+import { FooterCentral } from "./component/footercentral";
 import { LogIn } from "./pages/log-in.jsx";
+import { FormAdop } from "./component/formAdop";
 
 //create your first component
 const Layout = () => {
@@ -33,10 +36,10 @@ const Layout = () => {
 		<div className="d-flex flex-column h-100 container">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
-
+					<Navbarcentral />
 					<Switch>
 						<Route exact path="/">
+							<Navbar />
 							<Home />
 							<Experiences />
 						</Route>
@@ -58,10 +61,14 @@ const Layout = () => {
 						<Route exact path="/log-in">
 							<LogIn />
 						</Route>
+						<Route exact path="/formulario">
+							<FormAdop />
+						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
+					<FooterCentral />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

@@ -7,10 +7,13 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db
+from api.models import db, User
 from api.routes import api
 from api.admin import setup_admin
 #from models import Person
+
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
@@ -56,6 +59,51 @@ def serve_any_other_file(path):
     response = send_from_directory(static_file_dir, path)
     response.cache_control.max_age = 0 # avoid cache memory
     return response
+
+# include sign-up endpoint
+@app.route('/sign-up/', methods=['POST'])
+def add_user():
+    if request.method == 'POST':
+        # user data is received
+        user_name = request.json.get("user_name", None)
+        fundation_name = request.json.get("fundation_name", None)
+        email = request.json.get("email", None)
+        password = request.json.get("password", None)
+        phone_number = request.json.get("phone_number", None)
+        province = request.json.get("province", None)
+        
+        if not user_name:
+            return jsonify("User name is required!"), 400
+        if not fundation_name:
+            return jsonify("Fundation name is required!"), 400
+        if not email:
+            return jsonify("Email is required!"), 400
+        if not password:
+            return jsonify("Password is required!"), 400
+        if not phone_number:
+            return jsonify("Phone number is required!"), 400
+        if not province:
+            return jsonify("Province is required!"), 400
+
+        #Verification email
+        mail = User.query.filter_by(email = email).first()
+        if mail:
+            return jsonify({"msg": "Email  already exists"}), 400
+        
+        #Verification user_name
+        username = User.query.filter_by(user_name = user_name).first()
+        if username: 
+            return jsonify({"msg": "Username  already exists"}), 400
+        
+        #Encrypt password
+        hashed_password = generate_password_hash(password)
+
+        user = User(user_name = user_name, fundation_name = fundation_name, email = email, password = hashed_password, phone_number = phone_number, province = province)
+
+        db.session.add(user)
+        db.session.commit()
+        
+        return jsonify("Your register was successful!"), 200
 
 # this only runs if `$ python src/main.py` is executed
 if __name__ == '__main__':

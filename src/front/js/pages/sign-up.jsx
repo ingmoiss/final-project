@@ -68,7 +68,7 @@ export function SignUp() {
 			</div>
 			<hr />
 			<div className="text-center d-flex justify-content-center align-items-center ">
-				<form className="rounded shadow px-2" style={{ width: "400px" }} /*onSubmit={}*/>
+				<form className="rounded shadow px-2" style={{ width: "400px" }} onSubmit={e => handleSubmit(e)}>
 					<div className="form-row my-2">
 						<div className="col-md ">
 							<input
@@ -76,7 +76,7 @@ export function SignUp() {
 								className="form-control form-control-lg"
 								placeholder="Fundation Name"
 								required
-								//onChange={}
+								onChange={e => setFundation(e.target.value)}
 							/>
 						</div>
 					</div>
@@ -87,7 +87,7 @@ export function SignUp() {
 								className="form-control form-control-lg"
 								placeholder="User"
 								required
-								//onChange={}
+								onChange={e => setUser(e.target.value)}
 							/>
 						</div>
 					</div>
@@ -98,7 +98,7 @@ export function SignUp() {
 								className="form-control form-control-lg"
 								placeholder="Email"
 								required
-								//onChange={}
+								onChange={e => setEmail(e.target.value)}
 							/>
 						</div>
 					</div>
@@ -109,7 +109,7 @@ export function SignUp() {
 								className="form-control form-control-lg"
 								placeholder="Phone Number"
 								required
-								//onChange={}
+								onChange={e => setPhone(e.target.value)}
 							/>
 						</div>
 					</div>
@@ -120,13 +120,15 @@ export function SignUp() {
 								className="form-control form-control-lg"
 								placeholder="Password"
 								required
-								//onChange={}
+								onChange={e => setPassword(e.target.value)}
 							/>
 						</div>
 					</div>
 					<div className="form-row my-2">
 						<div className="col-md">
-							<select className="form-control form-control-lg">
+							<select
+								className="form-control form-control-lg"
+								onChange={e => setProvince(e.target.value)}>
 								<option selected>Province</option>
 								<option>Limon</option>
 								<option>Cartago</option>

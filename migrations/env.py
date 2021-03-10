@@ -3,8 +3,11 @@ from __future__ import with_statement
 import logging
 from logging.config import fileConfig
 
+<<<<<<< HEAD
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
+=======
+>>>>>>> b30a1c5185ea95e26bd24ee27f812e028a65730d
 from flask import current_app
 
 from alembic import context
@@ -72,11 +75,7 @@ def run_migrations_online():
                 directives[:] = []
                 logger.info('No changes in schema detected.')
 
-    connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
-        prefix='sqlalchemy.',
-        poolclass=pool.NullPool,
-    )
+    connectable = current_app.extensions['migrate'].db.engine
 
     with connectable.connect() as connection:
         context.configure(

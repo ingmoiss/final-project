@@ -11,7 +11,6 @@ import { SignUp } from "./pages/sign-up.jsx"; //Include SignUp
 
 import { Navbarcentral } from "./component/navbarcentral";
 import { Navbar } from "./component/navbar";
-import { Experiences } from "./pages/footer";
 import { Dogs } from "./component/dogs";
 import { Dog } from "./pages/dog";
 import { FooterCentral } from "./component/footercentral";
@@ -41,14 +40,7 @@ const Layout = () => {
 					<Switch>
 						<Route exact path="/">
 							<Home />
-							<Experiences />
 						</Route>
-						{/* <Route exact path="/demo">
-							<Demo />
-						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
-						</Route> */}
 						<Route exact path="/dogs">
 							<Dogs data={store.dogs} />
 						</Route>

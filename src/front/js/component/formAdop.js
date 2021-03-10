@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 export const FormAdop = () => {
-	
 	return (
 		<body
 			style={{

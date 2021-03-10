@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-
-export const Footer = () => (
+export const FooterCentral = () => (
 	<ul id="footer" className="nav justify-content-center  footer mt-3 p-2">
 		<li className="nav-item">
 			<a id="text1" className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">

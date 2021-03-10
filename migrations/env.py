@@ -3,11 +3,8 @@ from __future__ import with_statement
 import logging
 from logging.config import fileConfig
 
-<<<<<<< HEAD
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
-=======
->>>>>>> b30a1c5185ea95e26bd24ee27f812e028a65730d
 from flask import current_app
 
 from alembic import context

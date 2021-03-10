@@ -13,11 +13,12 @@ export const Navbarcentral = () => {
 					</a>
 				</Link>
 				<div className="ml-auto">
-					<button id="iniciar" type="button" className="btn btn-primary mr-1">
-						Iniciar Sesion
-						<i className="far fa-user" />
-					</button>
-
+					<Link to="/sign-up">
+						<button id="iniciar" type="button" className="btn btn-primary mr-1">
+							Iniciar Sesion
+							<i className="far fa-user" />
+						</button>
+					</Link>
 					<button id="cerrar" type="button" className="btn btn-secondary ml-1 ">
 						Cerrar Sesion
 						<i className="fas fa-sign-in-alt" />

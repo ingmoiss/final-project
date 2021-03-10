@@ -13,7 +13,6 @@ import { Navbar } from "./component/navbar";
 import { Experiences } from "./pages/footer";
 import { Dogs } from "./component/dogs";
 import { Dog } from "./pages/dog";
-import { Footer } from "./component/footer";
 import { LogIn } from "./pages/log-in.jsx";
 
 //create your first component

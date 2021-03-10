@@ -14,7 +14,7 @@ export const Home = () => {
 					<Link to="/dogs">
 						<img
 							className="d-block w-100"
-							src="https://images4.alphacoders.com/673/thumb-1920-673740.jpg"
+							src="https://www.elpublicista.info/wp-content/uploads/2018/06/Pedrigree.png"
 							alt="Characters"
 							rounded
 						/>

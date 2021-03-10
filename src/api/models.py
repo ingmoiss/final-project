@@ -27,34 +27,3 @@ class User(db.Model):
             "province": self.province,
             # do not serialize the password, its a security breach
         }
-
-class Pets(db.Model):
-    __tablename__ = 'pets'
-    id = db.Column(db.Integer, primary_key = True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id')) #Se crea llave foranea 
-    pet_type = db.Column(db.String(120), unique=False, nullable=False)
-    foundation_worker = db.Column(db.String(120), unique=False, nullable=False)
-    descripcition = db.Column(db.String(2000), unique=False, nullable=False)
-    age = db.Column(db.Integer, unique=False, nullable=False)
-    size =  db.Column(db.Integer, unique=False, nullable=False)
-    temperament = db.Column(db.String(2000), unique=False, nullable=False)
-    vaccines =  db.Column(db.Boolean(), unique=False, nullable=False)
-    gender = db.Column(db.String(80), unique=False, nullable=False)
-
-
-    def __repr__(self):
-        return '<Pets %r>' % self.id
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "user_id": self.user_id,
-            "pet_type": self.pet_type,
-            "foundation_worker": self.foundation_worker,
-            "descripcition": self.descripcition,
-            "age": self.age,
-            "size": self.size,
-            "temperament": self.temperament,
-            "vaccines": self.vaccines,
-            "gender": self.gender,
-        }

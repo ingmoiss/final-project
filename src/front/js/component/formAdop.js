@@ -1,3 +1,4 @@
+import { Image, Video, Transformation, CloudinaryContext } from "cloudinary-react";
 import React, { Component, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 export const FormAdop = () => {
@@ -15,10 +16,20 @@ export const FormAdop = () => {
 	const [pet, setPet] = useState("perro");
 	const [vacunas, setVacunas] = useState(false);
 	const [redirect, setRedirect] = useState(false);
+	// Estados de las fotos
+	const [selectedFile, setSelectedFile] = useState();
+	const [isFilePicked, setIsFilePicked] = useState(false);
+
+	const changeHandler = event => {
+		setSelectedFile(event.target.files[0]);
+	};
 	// Alertas
 	const handleSubmit = e => {
 		e.preventDefault();
 		console.log(pet, vacunas);
+		const formData = new FormData();
+		formData.append("file", selectedFile);
+		formData.append("upload_preset", "ekn3qqlw");
 		//Validating empty fields
 		if (
 			user_name === "" ||
@@ -41,43 +52,48 @@ export const FormAdop = () => {
 		// 	alert("Please fill all the entries");
 		// }
 		// Creating body
-		const data = {
-			user_name: user_name,
-			fundation_name: fundation_name,
-			pet_name: pet_name,
-			description: description,
-			tamaño: tamaño,
-			sexo: sexo,
-			temperamento: temperamento,
-			// cat: cat,
-			pet: pet,
-			edad: edad,
-			phone_number: phone_number,
-			province: province,
-			vacunas: vacunas
-		};
-		//FETCH POST method
-		fetch("https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/pets", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(data)
-		})
-			.then(response => {
-				if (!response.ok) {
-					response.text().then(text => alert(text));
-					throw Error(response.statusText);
-				} else {
-					setRedirect(true);
-				}
-				return response.json();
-			})
-			.then(data => {
-				console.log("User registered an animal");
-			})
-			.catch(error => {
-				console.error("Error:", error);
+		fetch("https://api.cloudinary.com/v1_1/davidmorasalazar/upload", { method: "POST", body: formData })
+			.then(res => res.json())
+			.then(res => {
+				const data = {
+					user_name: user_name,
+					fundation_name: fundation_name,
+					pet_name: pet_name,
+					description: description,
+					tamaño: tamaño,
+					sexo: sexo,
+					temperamento: temperamento,
+					// cat: cat,
+					pet: pet,
+					edad: edad,
+					phone_number: phone_number,
+					province: province,
+					vacunas: vacunas,
+					imageURL: res.url
+				};
+				//FETCH POST method
+				fetch("https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/pets", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(data)
+				})
+					.then(response => {
+						if (!response.ok) {
+							response.text().then(text => alert(text));
+							throw Error(response.statusText);
+						} else {
+							setRedirect(true);
+						}
+						return response.json();
+					})
+					.then(data => {
+						console.log("User registered an animal");
+					})
+					.catch(error => {
+						console.error("Error:", error);
+					});
 			});
 	};
 	return (
@@ -92,6 +108,9 @@ export const FormAdop = () => {
 							Registrar mascota
 						</h1>
 					</div>
+				</div>
+				<div>
+					<input type="file" name="file" onChange={changeHandler} />
 				</div>
 				<div className="text-center d-flex justify-content-center align-items-center ">
 					<form className="rounded shadow px-2" style={{ width: "600px" }} onSubmit={e => handleSubmit(e)}>

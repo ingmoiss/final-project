@@ -157,7 +157,7 @@ def add_formulario():
         pet = request.json.get("pet", None)    
         vacunas = request.json.get("vacunas", None)         
         province = request.json.get("province", None)
-        
+        imageURL = request.json.get("imageURL", None)
         if not user_name:
             return jsonify("User name is required!"), 400
         if not fundation_name:
@@ -182,6 +182,8 @@ def add_formulario():
              return jsonify("vacunas is required!"), 400        
         if not province:
             return jsonify("Province is required!"), 400
+        if not imageURL:
+            return jsonify("imageURL is required!"), 400
 
         # #Verification email
         # mail = User.query.filter_by(email = email).first()
@@ -196,7 +198,7 @@ def add_formulario():
         # #Encrypt password
         # hashed_password = generate_password_hash(password)
 
-        form = Pets(user_name = user_name, fundation_name = fundation_name, pet_name = pet_name, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, pet = pet, vacunas = vacunas, phone_number = phone_number, province = province)
+        form = Pets(user_name = user_name, fundation_name = fundation_name, pet_name = pet_name, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, pet = pet, vacunas = vacunas, phone_number = phone_number, province = province, imageURL=imageURL)
 
         db.session.add(form)
         db.session.commit()

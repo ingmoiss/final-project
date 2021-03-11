@@ -12,7 +12,7 @@ class User(db.Model):
     password = db.Column(db.String(300), unique=False, nullable=False)
     phone_number = db.Column(db.String(20), unique=True, nullable=False)
     province = db.Column(db.String(20), unique=False, nullable=False)
-    dog = db.relationship('Dogs', lazy=True) #Se crea relacion para llave foranea 
+    pet = db.relationship('Pets', lazy=True) #Se crea relacion para llave foranea 
     # cat = db.relationship('Cats', lazy=True) #Se crea relacion para llave foranea 
 
     def __repr__(self):
@@ -29,8 +29,8 @@ class User(db.Model):
             # do not serialize the password, its a security breach
         }
 
-class Dogs(db.Model):
-    __tablename__ = 'dogs'
+class Pets(db.Model):
+    __tablename__ = 'pets'
     id = db.Column(db.Integer, primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) #Se crea llave foranea 
     fundation_name = db.Column(db.String(120), unique=False, nullable=False)
@@ -43,12 +43,12 @@ class Dogs(db.Model):
     pet_name = db.Column(db.String(2000), unique=False, nullable=False)
     user_name = db.Column(db.String(2000), unique=False, nullable=False)
     phone_number = db.Column(db.Integer, unique=False, nullable=False)
-    dog = db.Column(db.String(2000), unique=False, nullable=False)
+    pet = db.Column(db.String(2000), unique=False, nullable=False)
     province = db.Column(db.String(2000), unique=False, nullable=False)
 
 
     def __repr__(self):
-        return '<Dogs %r>' % self.id
+        return '<Pets %r>' % self.id
 
     def serialize(self):
         return {
@@ -64,7 +64,7 @@ class Dogs(db.Model):
             "pet_name": self.pet_name,
             "user_name": self.user_name,
             "phone_number": self.phone_number,
-            "dog": self.dog,
+            "pet": self.pet,
             "province": self.province,
             
         }

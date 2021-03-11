@@ -7,7 +7,7 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db, User, Dogs, Cats
+from api.models import db, User, Pets, Cats
 from api.routes import api
 from api.admin import setup_admin
 import datetime
@@ -139,7 +139,7 @@ def login():
 
         return jsonify(data), 200
 #################################################### Formulario ###########################################################
-@app.route('/dogs', methods=['POST'])
+@app.route('/pets', methods=['POST'])
 def add_formulario():
     if request.method == 'POST':
         print(request.get_json())
@@ -154,7 +154,7 @@ def add_formulario():
         temperamento = request.json.get("temperamento", None)
         edad = request.json.get("edad", None)
         # cat = request.json.get("cat", None)
-        dog = request.json.get("dog", None)    
+        pet = request.json.get("pet", None)    
         vacunas = request.json.get("vacunas", None)         
         province = request.json.get("province", None)
         
@@ -196,7 +196,7 @@ def add_formulario():
         # #Encrypt password
         # hashed_password = generate_password_hash(password)
 
-        form = Dogs(user_name = user_name, fundation_name = fundation_name, pet_name = pet_name, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, dog = dog, vacunas = vacunas, phone_number = phone_number, province = province)
+        form = Pets(user_name = user_name, fundation_name = fundation_name, pet_name = pet_name, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, pet = pet, vacunas = vacunas, phone_number = phone_number, province = province)
 
         db.session.add(form)
         db.session.commit()
@@ -204,23 +204,23 @@ def add_formulario():
         return jsonify("Your animal register was successful!"), 200
     
 #################################################### Dogs ###########################################################
-@app.route('/dogs', methods=['GET'])
-def get_dogs():
+@app.route('/pets', methods=['GET'])
+def get_pets():
 
     # get all the todos
-    query = Dogs.query.all()
+    query = Pets.query.all()
 
     # map the results and your list of people  inside of the all_people variable
     results = list(map(lambda x: x.serialize(), query))
 
     return jsonify(results), 200
-@app.route('/dog/<int:chaid>', methods=['GET'])
-def dog(chaid):
+@app.route('/pet/<int:chaid>', methods=['GET'])
+def pet(chaid):
 
     # get all the todos
-    dog = Dogs.query.get(chaid)
+    pet = Pets.query.get(chaid)
     # map the results and your list of people  inside of the all_people variable
-    return jsonify(dog.serialize()), 200
+    return jsonify(pet.serialize()), 200
 #################################################### Cats ###################################################################
 @app.route('/cats', methods=['GET'])
 def cats():

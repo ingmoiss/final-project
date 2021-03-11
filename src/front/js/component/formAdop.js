@@ -12,13 +12,13 @@ export const FormAdop = () => {
 	const [edad, setEdad] = useState("");
 	const [province, setProvince] = useState("");
 	// const [cat, setCat] = useState("");
-	const [dog, setDog] = useState("perro");
+	const [pet, setPet] = useState("perro");
 	const [vacunas, setVacunas] = useState(false);
 	const [redirect, setRedirect] = useState(false);
 	// Alertas
 	const handleSubmit = e => {
 		e.preventDefault();
-		console.log(dog, vacunas);
+		console.log(pet, vacunas);
 		//Validating empty fields
 		if (
 			user_name === "" ||
@@ -50,14 +50,14 @@ export const FormAdop = () => {
 			sexo: sexo,
 			temperamento: temperamento,
 			// cat: cat,
-			dog: dog,
+			pet: pet,
 			edad: edad,
 			phone_number: phone_number,
 			province: province,
 			vacunas: vacunas
 		};
 		//FETCH POST method
-		fetch("https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/dogs", {
+		fetch("https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/pets", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -215,8 +215,8 @@ export const FormAdop = () => {
 									name="inlineRadioOptions"
 									id="inlineRadio1"
 									value="perro"
-									checked={dog === "perro" ? true : false}
-									onClick={e => setDog(e.target.value)}
+									checked={pet === "perro" ? true : false}
+									onClick={e => setPet(e.target.value)}
 								/>
 								<label
 									className="form-check-label"
@@ -233,8 +233,8 @@ export const FormAdop = () => {
 									name="inlineRadioOptions"
 									id="inlineRadio2"
 									value="gato"
-									checked={dog === "perro" ? false : true}
-									onClick={e => setDog(e.target.value)}
+									checked={pet === "perro" ? false : true}
+									onClick={e => setPet(e.target.value)}
 								/>
 								<label
 									className="form-check-label"

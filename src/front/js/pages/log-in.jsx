@@ -1,10 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export function LogIn() {
 	const [user_name, setUser] = useState("");
 	const [password, setPassword] = useState("");
 	const [redirect, setRedirect] = useState(false);
+
+	const { store, actions } = useContext(Context);
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -18,7 +21,7 @@ export function LogIn() {
 			user_name: user_name
 		};
 
-		fetch("https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/log-in/", {
+		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/log-in/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -37,8 +40,7 @@ export function LogIn() {
 			.then(data => {
 				sessionStorage.setItem("user_token", data.token);
 				sessionStorage.setItem("is_logged", "true");
-				// actions.loggedIn();
-				// actions.loadFavorites();
+				actions.loggedIn();
 				console.log("Succesful log in");
 			})
 			.catch(error => {

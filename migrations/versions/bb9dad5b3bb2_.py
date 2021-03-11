@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 06375d2ea6bd
+Revision ID: bb9dad5b3bb2
 Revises: 
-Create Date: 2021-03-10 22:32:53.874857
+Create Date: 2021-03-11 18:44:42.135142
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '06375d2ea6bd'
+revision = 'bb9dad5b3bb2'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -48,13 +48,18 @@ def upgrade():
     op.create_table('dogs',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('fundation_worker', sa.String(length=120), nullable=False),
-    sa.Column('descripcition', sa.String(length=2000), nullable=False),
-    sa.Column('age', sa.Integer(), nullable=False),
-    sa.Column('size', sa.Integer(), nullable=False),
-    sa.Column('temperament', sa.String(length=2000), nullable=False),
-    sa.Column('vaccines', sa.Boolean(), nullable=False),
-    sa.Column('gender', sa.String(length=80), nullable=False),
+    sa.Column('fundation_name', sa.String(length=120), nullable=False),
+    sa.Column('description', sa.String(length=2000), nullable=False),
+    sa.Column('edad', sa.Integer(), nullable=False),
+    sa.Column('tamaño', sa.Integer(), nullable=False),
+    sa.Column('temperamento', sa.String(length=2000), nullable=False),
+    sa.Column('vacunas', sa.Boolean(), nullable=False),
+    sa.Column('sexo', sa.String(length=80), nullable=False),
+    sa.Column('user_lastname', sa.String(length=2000), nullable=False),
+    sa.Column('user_name', sa.String(length=2000), nullable=False),
+    sa.Column('phone_number', sa.Integer(), nullable=False),
+    sa.Column('dog', sa.String(length=2000), nullable=False),
+    sa.Column('province', sa.String(length=2000), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

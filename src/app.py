@@ -138,6 +138,71 @@ def login():
         }
 
         return jsonify(data), 200
+#################################################### Formulario ###########################################################
+@app.route('/dogs', methods=['POST'])
+def add_formulario():
+    if request.method == 'POST':
+        print(request.get_json())
+        # user data is received
+        user_name = request.json.get("user_name", None)
+        fundation_name = request.json.get("fundation_name", None)
+        user_lastname = request.json.get("user_lastname", None)
+        description = request.json.get("description", None)
+        phone_number = request.json.get("phone_number", None)
+        tamaño = request.json.get("tamaño", None)
+        sexo = request.json.get("sexo", None)
+        temperamento = request.json.get("temperamento", None)
+        edad = request.json.get("edad", None)
+        # cat = request.json.get("cat", None)
+        dog = request.json.get("dog", None)    
+        vacunas = request.json.get("vacunas", None)         
+        province = request.json.get("province", None)
+        
+        if not user_name:
+            return jsonify("User name is required!"), 400
+        if not fundation_name:
+            return jsonify("Fundation name is required!"), 400
+        if not user_lastname:
+            return jsonify("User lastname is required!"), 400
+        if not description:
+            return jsonify("description is required!"), 400
+        if not phone_number:
+            return jsonify("Phone number is required!"), 400
+        if not tamaño:
+            return jsonify("tamaño is required!"), 400
+        if not sexo:
+            return jsonify("sexo is required!"), 400
+        if not temperamento:
+            return jsonify("temperamento is required!"), 400
+        if not edad:
+            return jsonify("edad is required!"), 400
+        # if not dog:
+        #     return jsonify("dog is required!"), 400
+        if not vacunas:
+             return jsonify("vacunas is required!"), 400        
+        if not province:
+            return jsonify("Province is required!"), 400
+
+        # #Verification email
+        # mail = User.query.filter_by(email = email).first()
+        # if mail:
+        #     return jsonify({"msg": "Email  already exists"}), 400
+        
+        # #Verification user_name
+        # username = User.query.filter_by(user_name = user_name).first()
+        # if username: 
+        #     return jsonify({"msg": "Username  already exists"}), 400
+        
+        # #Encrypt password
+        # hashed_password = generate_password_hash(password)
+
+        form = Dogs(user_name = user_name, fundation_name = fundation_name, user_lastname = user_lastname, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, dog = dog, vacunas = vacunas, phone_number = phone_number, province = province)
+
+        db.session.add(form)
+        db.session.commit()
+        
+        return jsonify("Your animal register was successful!"), 200
+    
 #################################################### Dogs ###########################################################
 @app.route('/dogs', methods=['GET'])
 def get_dogs():

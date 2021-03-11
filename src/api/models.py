@@ -13,7 +13,7 @@ class User(db.Model):
     phone_number = db.Column(db.String(20), unique=True, nullable=False)
     province = db.Column(db.String(20), unique=False, nullable=False)
     dog = db.relationship('Dogs', lazy=True) #Se crea relacion para llave foranea 
-    cat = db.relationship('Cats', lazy=True) #Se crea relacion para llave foranea 
+    # cat = db.relationship('Cats', lazy=True) #Se crea relacion para llave foranea 
 
     def __repr__(self):
         return '<User %r>' % self.id
@@ -33,13 +33,18 @@ class Dogs(db.Model):
     __tablename__ = 'dogs'
     id = db.Column(db.Integer, primary_key = True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) #Se crea llave foranea 
-    fundation_worker = db.Column(db.String(120), unique=False, nullable=False)
-    descripcition = db.Column(db.String(2000), unique=False, nullable=False)
-    age = db.Column(db.Integer, unique=False, nullable=False)
-    size =  db.Column(db.Integer, unique=False, nullable=False)
-    temperament = db.Column(db.String(2000), unique=False, nullable=False)
-    vaccines =  db.Column(db.Boolean(), unique=False, nullable=False)
-    gender = db.Column(db.String(80), unique=False, nullable=False)
+    fundation_name = db.Column(db.String(120), unique=False, nullable=False)
+    description = db.Column(db.String(2000), unique=False, nullable=False)
+    edad = db.Column(db.Integer, unique=False, nullable=False)
+    tamaño =  db.Column(db.Integer, unique=False, nullable=False)
+    temperamento = db.Column(db.String(2000), unique=False, nullable=False)
+    vacunas =  db.Column(db.Boolean(), unique=False, nullable=False)
+    sexo = db.Column(db.String(80), unique=False, nullable=False)
+    user_lastname = db.Column(db.String(2000), unique=False, nullable=False)
+    user_name = db.Column(db.String(2000), unique=False, nullable=False)
+    phone_number = db.Column(db.Integer, unique=False, nullable=False)
+    dog = db.Column(db.String(2000), unique=False, nullable=False)
+    province = db.Column(db.String(2000), unique=False, nullable=False)
 
 
     def __repr__(self):
@@ -49,13 +54,19 @@ class Dogs(db.Model):
         return {
             "id": self.id,
             "user_id": self.user_id,
-            "fundation_worker": self.fundation_worker,
-            "descripcition": self.descripcition,
-            "age": self.age,
-            "size": self.size,
-            "temperament": self.temperament,
-            "vaccines": self.vaccines,
-            "gender": self.gender,
+            "fundation_name": self.fundation_name,
+            "description": self.description,
+            "edad": self.edad,
+            "tamaño": self.tamaño,
+            "temperamento": self.temperamento,
+            "vacunas": self.vacunas,
+            "sexo": self.sexo,
+            "user_lastname": self.user_lastname,
+            "user_name": self.user_name,
+            "phone_number": self.phone_number,
+            "dog": self.dog,
+            "province": self.province,
+            
         }
 
 class Cats(db.Model):

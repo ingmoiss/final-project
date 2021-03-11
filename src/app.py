@@ -146,7 +146,7 @@ def add_formulario():
         # user data is received
         user_name = request.json.get("user_name", None)
         fundation_name = request.json.get("fundation_name", None)
-        user_lastname = request.json.get("user_lastname", None)
+        pet_name = request.json.get("pet_name", None)
         description = request.json.get("description", None)
         phone_number = request.json.get("phone_number", None)
         tamaño = request.json.get("tamaño", None)
@@ -162,7 +162,7 @@ def add_formulario():
             return jsonify("User name is required!"), 400
         if not fundation_name:
             return jsonify("Fundation name is required!"), 400
-        if not user_lastname:
+        if not pet_name:
             return jsonify("User lastname is required!"), 400
         if not description:
             return jsonify("description is required!"), 400
@@ -196,7 +196,7 @@ def add_formulario():
         # #Encrypt password
         # hashed_password = generate_password_hash(password)
 
-        form = Dogs(user_name = user_name, fundation_name = fundation_name, user_lastname = user_lastname, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, dog = dog, vacunas = vacunas, phone_number = phone_number, province = province)
+        form = Dogs(user_name = user_name, fundation_name = fundation_name, pet_name = pet_name, description = description, tamaño = tamaño, sexo = sexo, temperamento = temperamento, edad = edad, dog = dog, vacunas = vacunas, phone_number = phone_number, province = province)
 
         db.session.add(form)
         db.session.commit()

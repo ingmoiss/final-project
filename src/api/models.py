@@ -40,7 +40,7 @@ class Dogs(db.Model):
     temperamento = db.Column(db.String(2000), unique=False, nullable=False)
     vacunas =  db.Column(db.Boolean(), unique=False, nullable=False)
     sexo = db.Column(db.String(80), unique=False, nullable=False)
-    user_lastname = db.Column(db.String(2000), unique=False, nullable=False)
+    pet_name = db.Column(db.String(2000), unique=False, nullable=False)
     user_name = db.Column(db.String(2000), unique=False, nullable=False)
     phone_number = db.Column(db.Integer, unique=False, nullable=False)
     dog = db.Column(db.String(2000), unique=False, nullable=False)
@@ -61,7 +61,7 @@ class Dogs(db.Model):
             "temperamento": self.temperamento,
             "vacunas": self.vacunas,
             "sexo": self.sexo,
-            "user_lastname": self.user_lastname,
+            "pet_name": self.pet_name,
             "user_name": self.user_name,
             "phone_number": self.phone_number,
             "dog": self.dog,

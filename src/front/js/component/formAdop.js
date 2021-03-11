@@ -2,7 +2,7 @@ import React, { Component, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 export const FormAdop = () => {
 	const [user_name, setUser] = useState("");
-	const [user_lastname, setUserlastname] = useState("");
+	const [pet_name, setUserlastname] = useState("");
 	const [fundation_name, setFundation] = useState("");
 	const [phone_number, setPhone] = useState("");
 	const [description, setDescription] = useState("");
@@ -23,7 +23,7 @@ export const FormAdop = () => {
 		if (
 			user_name === "" ||
 			fundation_name === "" ||
-			user_lastname === "" ||
+			pet_name === "" ||
 			description === "" ||
 			phone_number === "" ||
 			tamaño === "" ||
@@ -44,7 +44,7 @@ export const FormAdop = () => {
 		const data = {
 			user_name: user_name,
 			fundation_name: fundation_name,
-			user_lastname: user_lastname,
+			pet_name: pet_name,
 			description: description,
 			tamaño: tamaño,
 			sexo: sexo,
@@ -100,7 +100,7 @@ export const FormAdop = () => {
 								<input
 									type="text"
 									className="form-control form-control-lg"
-									placeholder="Nombre"
+									placeholder="Nombre completo"
 									required
 									onChange={e => setUser(e.target.value)}
 								/>
@@ -111,7 +111,7 @@ export const FormAdop = () => {
 								<input
 									type="text"
 									className="form-control form-control-lg"
-									placeholder="Apellido"
+									placeholder="Nombre de la mascota"
 									required
 									onChange={e => setUserlastname(e.target.value)}
 								/>

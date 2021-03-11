@@ -12,9 +12,7 @@ export const Navbarcentral = () => {
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<Link to="/">
-					<a className="py-1">
-						<img src={logo} style={{ width: "150px" }} />
-					</a>
+					<img className="py-1" src={logo} alt="Logo" style={{ width: "150px" }} />
 				</Link>
 				{loggedIn != "true" ? (
 					<div className="ml-auto">

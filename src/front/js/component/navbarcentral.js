@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-import logo from "../../img/logo-zaguatech.png";
+import logo from "../../img/zaguatech.png";
 
 export const Navbarcentral = () => {
 	const { store, actions } = useContext(Context);
@@ -12,7 +12,7 @@ export const Navbarcentral = () => {
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<Link to="/">
-					<img className="py-1" src={logo} alt="Logo" style={{ width: "150px" }} />
+					<img className="py-1" src={logo} alt="Logo" style={{ width: "100px" }} />
 				</Link>
 				{loggedIn != "true" ? (
 					<div className="ml-auto">

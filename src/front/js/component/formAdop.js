@@ -89,7 +89,7 @@ export const FormAdop = () => {
 				<div className="row">
 					<div className="col-md">
 						<h1 className="font text-center mb-0 mt-3" style={{ color: "black" }}>
-							Formulario de Adopcion
+							Registrar mascota
 						</h1>
 					</div>
 				</div>

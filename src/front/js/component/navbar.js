@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className="navbar border-top shadow-sm  navbar-light  mb-3" style={{ background: "#e3f2fd" }}>
 			<div className="m-auto">
 				<Link to="/formulario">
-					<button className="btn">Formulario</button>
+					<button className="btn">Registrar mascota</button>
 				</Link>
 			</div>
 			<div className="m-auto">

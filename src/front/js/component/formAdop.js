@@ -109,11 +109,16 @@ export const FormAdop = () => {
 						</h1>
 					</div>
 				</div>
-				<div>
+				{/* <div>
 					<input type="file" name="file" onChange={changeHandler} />
-				</div>
+				</div> */}
 				<div className="text-center d-flex justify-content-center align-items-center ">
 					<form className="rounded shadow px-2" style={{ width: "600px" }} onSubmit={e => handleSubmit(e)}>
+						<div className="form-row my-2">
+							<div className="col-md ">
+								<input type="file" name="file" onChange={changeHandler} />
+							</div>
+						</div>
 						<div className="form-row my-2">
 							<div className="col-md ">
 								<input

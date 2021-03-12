@@ -17,10 +17,6 @@ export const Home = () => {
 							alt="Characters"
 							rounded
 						/>
-						<Carousel.Caption>
-							<h3>Characters</h3>
-							<p>Find Your Favorites Star Wars Characters</p>
-						</Carousel.Caption>
 					</a>
 				</Carousel.Item>
 

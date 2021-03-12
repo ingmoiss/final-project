@@ -17,7 +17,7 @@ export function Dog(props) {
 	};
 	return (
 		<Container>
-			<Media className="mt-5 margenes">
+			<Media className="mt-5">
 				{store.pets.map((each, i) => {
 					if (i == intId) {
 						return (
@@ -39,7 +39,7 @@ export function Dog(props) {
 										</Media.Body>
 									</Col>
 								</Row>
-								<Table responsive="sm">
+								<Table responsive="md">
 									<thead>
 										<tr>
 											<th>Nombre de la Fundación</th>

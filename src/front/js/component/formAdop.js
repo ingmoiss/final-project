@@ -111,8 +111,15 @@ export const FormAdop = () => {
 				</div>
 				<div className="text-center d-flex justify-content-center align-items-center ">
 					<form className="rounded shadow px-2" style={{ width: "600px" }} onSubmit={e => handleSubmit(e)}>
-						<div>
-							<input type="file" name="file" onChange={changeHandler} />
+						<div className="form-row my-2">
+							<div className="col-md ">
+								<div className="custom-file">
+									<input type="file" className="custom-file-input" onChange={changeHandler} />
+									<label className="custom-file-label" aria-describedby="inputGroupFileAddon02">
+										Foto de la mascota
+									</label>
+								</div>
+							</div>
 						</div>
 						<div className="form-row my-2">
 							<div className="col-md ">

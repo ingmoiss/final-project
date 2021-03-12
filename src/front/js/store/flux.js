@@ -1,18 +1,18 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			dogs: [],
+			pets: [],
 			login: "false"
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			loadDogs: async () => {
-				const url = "https://swapi.dev/api/people/";
+				const url = "https://3001-tan-guan-lxdjlayu.ws-us03.gitpod.io/pets";
 				const response = await fetch(url);
 				const data = await response.json();
 				console.log(data);
-				setStore({ dogs: [...data.results] });
-				console.log(getStore().dogs);
+				setStore({ pets: [...data] });
+				console.log(getStore().pets);
 			},
 			// Login funtion
 			loggedIn: () => {

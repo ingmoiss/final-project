@@ -45,7 +45,7 @@ class Pets(db.Model):
     phone_number = db.Column(db.Integer, unique=False, nullable=False)
     pet = db.Column(db.String(2000), unique=False, nullable=False)
     province = db.Column(db.String(2000), unique=False, nullable=False)
-
+    imageURL = db.Column(db.String(2000), unique=False, nullable=False)
 
     def __repr__(self):
         return '<Pets %r>' % self.id
@@ -66,6 +66,7 @@ class Pets(db.Model):
             "phone_number": self.phone_number,
             "pet": self.pet,
             "province": self.province,
+            "imageURL": self.imageURL
             
         }
 

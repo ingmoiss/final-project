@@ -3,7 +3,8 @@ import { Row, Col, Table, Media, Container, Button } from "react-bootstrap";
 import { useParams, useHistory } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
-
+import WhatsAppWidget from "react-whatsapp-widget";
+import "react-whatsapp-widget/dist/index.css";
 export function Dog(props) {
 	const { store, actions } = useContext(Context);
 	const { id } = useParams();
@@ -22,6 +23,13 @@ export function Dog(props) {
 					if (i == intId) {
 						return (
 							<div key={i}>
+								<WhatsAppWidget
+									phoneNumber={each.phone_number}
+									companyName={each.fundation_name}
+									message="¡Buen día! 👋🏼        ¿Deseas más información de esta mascota?"
+									textReplyTime="Típicamente responde en una hora"
+									sendButton="Enviar"
+								/>
 								<Row>
 									<Col sm>
 										<img

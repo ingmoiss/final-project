@@ -115,7 +115,10 @@ export const FormAdop = () => {
 							<div className="col-md ">
 								<div className="custom-file">
 									<input type="file" className="custom-file-input" onChange={changeHandler} />
-									<label className="custom-file-label" aria-describedby="inputGroupFileAddon02">
+									<label
+										className="custom-file-label"
+										aria-describedby="inputGroupFileAddon02"
+										onChange={handleSubmit}>
 										Foto de la mascota
 									</label>
 								</div>

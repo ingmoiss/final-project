@@ -12,37 +12,32 @@ export const Navbarcentral = () => {
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<Link to="/">
-					<img className="py-1" src={logo} alt="Logo" style={{ width: "100px" }} />
+					<img className="py-1" src={logo} alt="Logo" style={{ width: "90px" }} />
 				</Link>
-				{loggedIn != "true" ? (
-					<div className="ml-auto">
-						<Link to="/log-in">
-							<button id="iniciar" type="button" className="btn btn-outline-info rounded-pill mr-1">
-								Log In
-								<i className="far fa-user ml-2" />
-							</button>
-						</Link>
-						<Link to="/sign-up">
-							<button type="button" className="btn btn-info rounded-pill ml-1">
-								Sign Up
-								<i className="fas fa-sign-in-alt ml-2" />
-							</button>
-						</Link>
-					</div>
-				) : (
-					<div className="ml-auto">
+				<div className="ml-auto">
+					<div className="dropdown">
 						<button
-							id="cerrar"
+							className="btn btn-outline-info rounded-pill dropdown-toggle"
 							type="button"
-							className="btn btn-outline-info rounded-pill"
-							onClick={() => {
-								actions.logOut();
-							}}>
-							Log Out
-							<i className="fas fa-sign-out-alt ml-2"></i>
+							id="dropdownMenuButton"
+							data-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false">
+							Menú
 						</button>
+						<div className="dropdown-menu mr-5" aria-labelledby="dropdownMenuButton">
+							<a className="dropdown-item" href="#">
+								Action
+							</a>
+							<a className="dropdown-item" href="#">
+								Another action
+							</a>
+							<a className="dropdown-item" href="#">
+								Something else here
+							</a>
+						</div>
 					</div>
-				)}
+				</div>
 			</nav>
 		</div>
 	);

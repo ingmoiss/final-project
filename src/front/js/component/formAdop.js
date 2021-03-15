@@ -114,8 +114,16 @@ export const FormAdop = () => {
 						<div className="form-row my-2">
 							<div className="col-md ">
 								<div className="custom-file">
-									<input type="file" className="custom-file-input" onChange={changeHandler} />
-									<label className="custom-file-label" aria-describedby="inputGroupFileAddon02">
+									<input
+										type="file"
+										className="custom-file-input"
+										onChange={changeHandler}
+										name="inputGroupFile02"
+									/>
+									<label
+										className="custom-file-label"
+										name="inputGroupFile02"
+										aria-describedby="inputGroupFileAddon02">
 										Elija el archivo
 									</label>
 								</div>

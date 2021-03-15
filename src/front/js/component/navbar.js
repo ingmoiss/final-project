@@ -15,7 +15,7 @@ export const Navbar = () => {
 				</Link>
 			</div>
 			<div className="m-auto">
-				<Link to="/demo">
+				<Link to="/cats">
 					<button className="btn">Gatos</button>
 				</Link>
 			</div>

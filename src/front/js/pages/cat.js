@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import WhatsAppWidget from "react-whatsapp-widget";
 import "react-whatsapp-widget/dist/index.css";
-export function Dog(props) {
+export function Cat(props) {
 	const { store, actions } = useContext(Context);
 	const { id } = useParams();
 	const intId = parseInt(id);
@@ -83,6 +83,6 @@ export function Dog(props) {
 	);
 }
 
-Dog.propTypes = {
+Cat.propTypes = {
 	data: PropTypes.any
 };

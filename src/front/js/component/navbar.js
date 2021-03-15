@@ -19,6 +19,11 @@ export const Navbar = () => {
 					<button className="btn">Gatos</button>
 				</Link>
 			</div>
+			<div className="m-auto">
+				<Link to="/AboutUs">
+					<button className="btn">¿Quiénes Somos?</button>
+				</Link>
+			</div>
 		</nav>
 	);
 };

@@ -16,6 +16,7 @@ import { Cat } from "./pages/cat";
 import { FooterCentral } from "./component/footercentral";
 import { LogIn } from "./pages/log-in.jsx";
 import { FormAdop } from "./component/formAdop";
+import { AboutUs } from "./component/aboutus";
 
 //create your first component
 const Layout = () => {
@@ -61,6 +62,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/formulario">
 							<FormAdop />
+						</Route>
+						<Route exact path="/AboutUs">
+							<AboutUs />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>

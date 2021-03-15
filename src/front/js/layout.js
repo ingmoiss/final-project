@@ -15,6 +15,9 @@ import { FooterCentral } from "./component/footercentral";
 import { LogIn } from "./pages/log-in.jsx";
 import { FormAdop } from "./component/formAdop";
 
+//include PrivateRoute
+import { PrivateRoute } from "./routers/private-route";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -51,9 +54,7 @@ const Layout = () => {
 						<Route exact path="/log-in">
 							<LogIn />
 						</Route>
-						<Route exact path="/formulario">
-							<FormAdop />
-						</Route>
+						<PrivateRoute exact path="/formulario" component={FormAdop} />
 						<Route>
 							<h1>Not found!</h1>
 						</Route>

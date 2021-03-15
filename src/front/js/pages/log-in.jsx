@@ -21,7 +21,7 @@ export function LogIn() {
 			user_name: user_name
 		};
 
-		fetch("https://3001-amethyst-donkey-3uo2csuc.ws-us03.gitpod.io/log-in/", {
+		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/log-in/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -41,6 +41,7 @@ export function LogIn() {
 				sessionStorage.setItem("user_token", data.token);
 				sessionStorage.setItem("is_logged", "true");
 				actions.loggedIn();
+				console.log("data", data.token);
 				console.log("Succesful log in");
 			})
 			.catch(error => {

@@ -41,6 +41,7 @@ export function LogIn() {
 				sessionStorage.setItem("user_token", data.token);
 				sessionStorage.setItem("is_logged", "true");
 				actions.loggedIn();
+				console.log("data", data.token);
 				console.log("Succesful log in");
 			})
 			.catch(error => {

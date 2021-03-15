@@ -17,6 +17,10 @@ import { FooterCentral } from "./component/footercentral";
 import { LogIn } from "./pages/log-in.jsx";
 import { FormAdop } from "./component/formAdop";
 import { AboutUs } from "./component/aboutus";
+import { NotFound } from "./component/not-found.jsx";
+
+//include PrivateRoute
+import { PrivateRoute } from "./routers/private-route";
 
 //create your first component
 const Layout = () => {
@@ -60,14 +64,15 @@ const Layout = () => {
 						<Route exact path="/log-in">
 							<LogIn />
 						</Route>
-						<Route exact path="/formulario">
+						{/* <Route exact path="/formulario">
 							<FormAdop />
-						</Route>
+						</Route> */}
 						<Route exact path="/AboutUs">
 							<AboutUs />
 						</Route>
+						<PrivateRoute exact path="/formulario" component={FormAdop} />
 						<Route>
-							<h1>Not found!</h1>
+							<NotFound />
 						</Route>
 					</Switch>
 					<FooterCentral />

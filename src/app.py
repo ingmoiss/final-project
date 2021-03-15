@@ -203,7 +203,7 @@ def add_formulario():
         db.session.add(form)
         db.session.commit()
         
-        return jsonify("Your animal register was successful!"), 200
+        return jsonify("Su mascota se registro correctamente! Puede revisarlo en la seccion de" + " "+ pet), 200
     
 #################################################### Dogs ###########################################################
 @app.route('/pets', methods=['GET'])

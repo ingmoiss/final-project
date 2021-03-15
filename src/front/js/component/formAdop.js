@@ -84,7 +84,9 @@ export const FormAdop = () => {
 							response.text().then(text => alert(text));
 							throw Error(response.statusText);
 						} else {
-							setRedirect(true);
+							response.text().then(text => alert(text));
+							throw Error(response.statusText);
+							// setRedirect(true);
 						}
 						return response.json();
 					})

@@ -36,7 +36,7 @@ export function SignUp() {
 		};
 
 		//FETCH POST method
-		fetch("https://3001-amethyst-donkey-3uo2csuc.ws-us03.gitpod.io/sign-up/", {
+		fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/sign-up/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

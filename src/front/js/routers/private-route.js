@@ -1,18 +1,15 @@
-import React, { useContext } from "react";
-import { FormAdop } from "../component/formAdop";
+import React, { useContext, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 
-export function PrivateRoute({ component: Component, ...rest }) {
-	const { store, actions } = useContext(Context);
+export const PrivateRoute = ({ component: Component, ...rest }) => {
+	var loggedIn = sessionStorage.getItem("is_logged");
 
-	const logged = store.login;
-
-	return <Route {...rest}>{logged == "true" ? <Component /> : <Redirect to="/log-in" />}</Route>;
-}
+	return <Route {...rest}>{loggedIn != "true" ? <Redirect to="/log-in" /> : <Component />}</Route>;
+};
 
 PrivateRoute.propTypes = {
-	component: PropTypes.string
+	component: PropTypes.func
 };

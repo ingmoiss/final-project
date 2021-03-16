@@ -39,7 +39,7 @@ export const Navbarcentral = () => {
 								actions.logOut();
 							}}>
 							Log Out
-							<i className="fas fa-sign-out-alt ml-2"></i>
+							<i className="fas fa-sign-out-alt ml-2" />
 						</button>
 					</div>
 				)}

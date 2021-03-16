@@ -64,9 +64,6 @@ const Layout = () => {
 						<Route exact path="/log-in">
 							<LogIn />
 						</Route>
-						{/* <Route exact path="/formulario">
-							<FormAdop />
-						</Route> */}
 						<Route exact path="/AboutUs">
 							<AboutUs />
 						</Route>

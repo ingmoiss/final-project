@@ -10,7 +10,9 @@ export function NotFound() {
 					<h1 className="not-found">404</h1>
 					<h1>La Página no funciona</h1>
 				</div>
-				<div className="col">{perro}</div>
+				<div className="col">
+					<img src={perro} alt="" />
+				</div>
 			</div>
 		</div>
 	);

@@ -35,15 +35,15 @@ export const Cats = () => {
 											<Card.Title>{pets.pet_name}</Card.Title>
 											<Card.Text>
 												<p>
-													<strong>Sexo:</strong>
+													<strong>Sexo: </strong>
 													<span>{pets.sexo}</span>
 												</p>
 												<p>
-													<strong>Edad</strong>
+													<strong>Edad: </strong>
 													<span>{pets.edad}</span>
 												</p>
 												<p>
-													<strong>Ubicación:</strong>
+													<strong>Ubicación: </strong>
 													<span>{pets.province}</span>
 												</p>
 											</Card.Text>

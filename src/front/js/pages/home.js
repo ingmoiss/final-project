@@ -73,10 +73,10 @@ export const Home = () => {
 				<Carousel.Item rounded>
 					<div className="media">
 						<div className="media-body">
-							<h5 className="mt-0 mb-1">Max es mi mejor amigo!</h5>
+							<h5 className="mt-0 mb-1">¡Máx es mi mejor amigo!</h5>
 							Es un perro trabajador, todas las mañanas se despierta para ir a la finca a cumplir con sus
 							labores…… sentarse y ver que todo se cumpla. Además de ser un gran amigo es un perro fiel
-							que se ha ganado el cariño y respeto de toda la familia. Desque que lo vi en la fundación
+							que se ha ganado el cariño y respeto de toda la familia. Desque que lo ví en la fundación
 							sabía que tenía que ser mío y estoy súper feliz de tenerlo en casa.
 						</div>
 						<img className="d-block w-50" src={logo5} alt="Generic placeholder image" />
@@ -99,7 +99,7 @@ export const Home = () => {
 				<Carousel.Item rounded>
 					<div className="media">
 						<div className="media-body">
-							<h5 className="mt-0 mb-1">Si seguía su madre en esas condiciones, Frida no nace</h5>
+							<h5 className="mt-0 mb-1">Si seguía su madre en esas condiciones, Frida no nace.</h5>
 							Frida es la hija de una perra rescatada desde un criadero de animales. Su madre se
 							encontraba en pésimas condiciones con mastitis y un embarazo que no se veía buen final, si
 							seguía a su madre en esas condiciones, Frida no nacería. Ella es una perra muy fiel y
@@ -113,7 +113,7 @@ export const Home = () => {
 				<Carousel.Item>
 					<div className="media">
 						<div className="media-body">
-							<h5 className="mt-0 mb-1">La gordita de la casa</h5>
+							<h5 className="mt-0 mb-1">La gordita de la casa.</h5>
 							Ella es mi perrita, ya no perrita, ahora no deja de jugar con todo lo que hay, para mí es
 							medio de relajación cuando termino de trabajar y necesito paz. Es la más inteligente, y
 							contrario a lo que el mundo cree, su raza es sumamente respetuosa y nos ayudan a cuidar
@@ -125,15 +125,15 @@ export const Home = () => {
 				<Carousel.Item>
 					<div className="media">
 						<div id="texto" className="media-body">
-							<h5 className="mt-0 mb-1">Mas que una mascota!</h5>
+							<h5 className="mt-0 mb-1">¡Más que una mascota!</h5>
 							<a id="texto2">
-								A sido una de la expericias mas bonitas que he tenido en mi vida adopte a Scott cuando
-								apenas tenia quince dias de nacido, hubieron momentos en los que pense que realmente no
-								lo iba lograrlo puesto que el estaba muy pequeño pero aqui esta y tiene nueve años
-								conmigo y espero que este muchos años mas, y por supuesto tambien tengo a mi perrita
-								negra que justo va cumplir un año de vivir y la concentida de la casa :) adoptar una
-								mascota es un acto muy noble y animalito estara muy agradecido asi que los invito
-								adoptar a ustedes tambien!!
+								Ha sido una de la experiencias más bonitas que he tenido en mi vida adopte a Scott
+								cuando apenas tenía quince días de nacido, hubo momentos en los que pensé que realmente
+								no iba a lograrlo puesto que él estaba muy pequeño pero aquí está y tiene nueve años
+								conmigo y espero que esté muchos años más, y por supuesto también tengo a mi perrita
+								negra que justo va cumplir un año de vivir en la casa y es la concentida de la casa :)
+								adoptar una mascota es un acto muy noble y el animalito estará muy agradecido así que
+								los invito adoptar a ustedes también!!
 							</a>
 						</div>
 
@@ -148,12 +148,12 @@ export const Home = () => {
 				<Carousel.Item>
 					<div className="media">
 						<div className="media-body">
-							<h5 className="mt-0 mb-1">Una amiga fiel en casa!</h5>
+							<h5 className="mt-0 mb-1">¡Una amiga fiel en casa!</h5>
 							Así es como puedo describir mis días desde la llegada de Coqueta a mi casa, es una perrita
 							muy bien portada, amigable y fiel. Coqueta poco a poco ha ido superando su abandono en las
 							calles, desde que la adoptamos ha estado súper contenta y agradecida. No se cansa de correr
 							por toda la casa, y pues claro, una que otra diablura que sin duda alguna nos saca una
-							sonrisa. Agradezco a Zaguatec por su ayuda en este proceso de adopcion. Recomendado al 100%.
+							sonrisa. Agradezco a Zaguatec por su ayuda en este proceso de adopción. Recomendado al 100%.
 						</div>
 						<img
 							className="d-block w-50"

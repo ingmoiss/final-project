@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Card, Container, CardDeck, Button, Col, ButtonToolbar } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 export const Dogs = () => {
 	const { store, actions } = useContext(Context);
 	const [searchItem, setSearch] = useState();
-
+	useEffect(() => {
+		actions.loadDogs();
+		// setLoading(false);
+	}, []);
 	return (
 		<Container>
 			<h1 className="text-center mt-5">Perritos</h1>
@@ -18,35 +21,41 @@ export const Dogs = () => {
 			<CardDeck className="margenes">
 				{store.pets.map((pets, i) => {
 					return (
-						<Col className="mt-5 mb-10" md={4} key={i}>
-							<Card>
-								<Card.Img variant="top" src={pets.imageURL} />
-								<Card.Body>
-									<Card.Title>{pets.pet_name}</Card.Title>
-									<Card.Text>
-										<p>
-											<strong>Sexo:</strong>
-											<span>{pets.sexo}</span>
-										</p>
-										<p>
-											<strong>Edad</strong>
-											<span>{pets.edad}</span>
-										</p>
-										<p>
-											<strong>Ubicación:</strong>
-											<span>{pets.province}</span>
-										</p>
-									</Card.Text>
-									<ButtonToolbar
-										className="justify-content-between"
-										aria-label="Toolbar with Button groups">
-										<Link to={`/dog/${i}`}>
-											<Button variant="primary">Iniciar Adopción</Button>
-										</Link>
-									</ButtonToolbar>
-								</Card.Body>
-							</Card>
-						</Col>
+						<>
+							{pets.pet == "perro" ? (
+								<Col className="mt-5 mb-10" md={4} key={i}>
+									<Card>
+										<Card.Img variant="top" src={pets.imageURL} />
+										<Card.Body>
+											<Card.Title>{pets.pet_name}</Card.Title>
+											<Card.Text>
+												<p>
+													<strong>Sexo: </strong>
+													<span>{pets.sexo}</span>
+												</p>
+												<p>
+													<strong>Edad: </strong>
+													<span>{pets.edad}</span>
+												</p>
+												<p>
+													<strong>Ubicación: </strong>
+													<span>{pets.province}</span>
+												</p>
+											</Card.Text>
+											<ButtonToolbar
+												className="justify-content-between"
+												aria-label="Toolbar with Button groups">
+												<Link to={`/dog/${i}`}>
+													<Button variant="primary">Iniciar Adopción</Button>
+												</Link>
+											</ButtonToolbar>
+										</Card.Body>
+									</Card>
+								</Col>
+							) : (
+								" "
+							)}
+						</>
 					);
 				})}
 			</CardDeck>

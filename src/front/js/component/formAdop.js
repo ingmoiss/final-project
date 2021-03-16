@@ -1,6 +1,6 @@
 import { Image, Video, Transformation, CloudinaryContext } from "cloudinary-react";
 import React, { Component, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 export const FormAdop = () => {
 	const [user_name, setUser] = useState("");
 	const [pet_name, setUserlastname] = useState("");
@@ -23,6 +23,7 @@ export const FormAdop = () => {
 	const changeHandler = event => {
 		setSelectedFile(event.target.files[0]);
 	};
+	const history = useHistory();
 	// Alertas
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -30,7 +31,11 @@ export const FormAdop = () => {
 		const formData = new FormData();
 		formData.append("file", selectedFile);
 		formData.append("upload_preset", "ekn3qqlw");
-		//Validating empty fields
+		// let vacunasstring = "No";
+		// //Validating empty fields
+		// if (vacunas === true) {
+		// 	vacunasstring = "Si";
+		// }
 		if (
 			user_name === "" ||
 			fundation_name === "" ||
@@ -72,7 +77,7 @@ export const FormAdop = () => {
 					imageURL: res.url
 				};
 				//FETCH POST method
-				fetch("https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/pets", {
+				fetch("https://3001-amethyst-donkey-3uo2csuc.ws-us03.gitpod.io/pets", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -84,7 +89,8 @@ export const FormAdop = () => {
 							response.text().then(text => alert(text));
 							throw Error(response.statusText);
 						} else {
-							setRedirect(true);
+							response.text().then(text => alert(text));
+							history.push(data.pet == "perro" ? "/dogs" : "/cats");
 						}
 						return response.json();
 					})
@@ -115,8 +121,11 @@ export const FormAdop = () => {
 							<div className="col-md ">
 								<div className="custom-file">
 									<input type="file" className="custom-file-input" onChange={changeHandler} />
-									<label className="custom-file-label" aria-describedby="inputGroupFileAddon02">
-										Elija el archivo
+									<label
+										className="custom-file-label"
+										aria-describedby="inputGroupFileAddon02"
+										onChange={handleSubmit}>
+										Foto de la mascota
 									</label>
 								</div>
 							</div>
@@ -287,9 +296,11 @@ export const FormAdop = () => {
 									Vacunas al dia
 								</label>
 							</div>
+							{/* <Link to={`/dogs/`}> */}
 							<button type="submit" className="btn btn-primary mr-1">
 								Enviar información
 							</button>
+							{/* </Link> */}
 						</div>
 					</form>
 				</div>
@@ -297,4 +308,3 @@ export const FormAdop = () => {
 		</body>
 	);
 };
-// onClick={redirect=> {redirect ? <Redirect to="/" /> : ""}}

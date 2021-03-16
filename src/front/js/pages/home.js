@@ -5,6 +5,11 @@ import { Carousel, Container, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../../img/Luis-Larraburo.jpg";
 import logo1 from "../../img/Luis-Alvarado1.jpg";
+import logo2 from "../../img/David-Mora.jpg";
+import logo3 from "../../img/Maca.jpg";
+import logo4 from "../../img/Gato.jpg";
+import logo5 from "../../img/FotoMax.jpg";
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
@@ -68,32 +73,53 @@ export const Home = () => {
 				<Carousel.Item rounded>
 					<div className="media">
 						<div className="media-body">
-							<h5 className="mt-0 mb-1">Media object</h5>
-							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-							Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-							ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+							<h5 className="mt-0 mb-1">Max es mi mejor amigo!</h5>
+							Es un perro trabajador, todas las mañanas se despierta para ir a la finca a cumplir con sus
+							labores…… sentarse y ver que todo se cumpla. Además de ser un gran amigo es un perro fiel
+							que se ha ganado el cariño y respeto de toda la familia. Desque que lo vi en la fundación
+							sabía que tenía que ser mío y estoy súper feliz de tenerlo en casa.
 						</div>
-						<img
-							className="d-flex ml-3"
-							src="/images/pathToYourImage.png"
-							alt="Generic placeholder image"
-						/>
+						<img className="d-block w-50" src={logo5} alt="Generic placeholder image" />
+					</div>
+				</Carousel.Item>
+
+				<Carousel.Item rounded>
+					<div className="media">
+						<div className="media-body">
+							<h5 className="mt-0 mb-1">Linux mi gata programadora favorita.</h5>
+							Linux es una gata rescatada que en un inicio fue desechada porque pensaban que era macho, la
+							recogí y estaba apunto de quedar ciega, la cuidamos y tratamos. A pesar de que nadie de la
+							familia lo quería se ganó el corazón de todos nosotros. Mantuvo nombre de macho para
+							recordar su motivo de rescate y porque vive a mi lado cuando estoy programando.
+						</div>
+						<img className="d-block w-50" src={logo4} alt="Generic placeholder image" />
+					</div>
+				</Carousel.Item>
+
+				<Carousel.Item rounded>
+					<div className="media">
+						<div className="media-body">
+							<h5 className="mt-0 mb-1">Si seguía su madre en esas condiciones, Frida no nace</h5>
+							Frida es la hija de una perra rescatada desde un criadero de animales. Su madre se
+							encontraba en pésimas condiciones con mastitis y un embarazo que no se veía buen final, si
+							seguía a su madre en esas condiciones, Frida no nacería. Ella es una perra muy fiel y
+							juguetona, no se separa de nosotras, necesita dormir apegada a las personas y jamás me deja
+							sola en mis horas de teletrabajo.
+						</div>
+						<img className="d-block w-50" src={logo3} alt="Generic placeholder image" />
 					</div>
 				</Carousel.Item>
 
 				<Carousel.Item>
 					<div className="media">
 						<div className="media-body">
-							<h5 className="mt-0 mb-1">Media object</h5>
-							Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-							Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-							ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+							<h5 className="mt-0 mb-1">La gordita de la casa</h5>
+							Ella es mi perrita, ya no perrita, ahora no deja de jugar con todo lo que hay, para mí es
+							medio de relajación cuando termino de trabajar y necesito paz. Es la más inteligente, y
+							contrario a lo que el mundo cree, su raza es sumamente respetuosa y nos ayudan a cuidar
+							nuestras casitas. Fue una adopción de la fundación Animales del Sur y me hace feliz la vida.
 						</div>
-						<img
-							className="d-flex ml-3"
-							src="/images/pathToYourImage.png"
-							alt="Generic placeholder image"
-						/>
+						<img className="d-block w-50" src={logo2} alt="Generic placeholder image" />
 					</div>
 				</Carousel.Item>
 				<Carousel.Item>
@@ -110,7 +136,7 @@ export const Home = () => {
 								adoptar a ustedes tambien!!
 							</a>
 						</div>
-						<div data-spy="scroll" id="texto2" data-target="texto" data-offset="0" className="" />
+
 						<img
 							className="d-block w-50"
 							// style={{ borderRadius: "50%" }}

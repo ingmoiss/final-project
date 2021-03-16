@@ -12,6 +12,7 @@ export const Home = () => {
 				<Carousel.Item rounded>
 					<a href="https://www.pedigree.com/" target="_blank" rel="noreferrer">
 						<img
+							style={{ height: "500px" }}
 							className="d-block w-100"
 							src="https://www.elpublicista.info/wp-content/uploads/2018/06/Pedrigree.png"
 							alt="Characters"

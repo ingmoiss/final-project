@@ -42,13 +42,6 @@ export function Cat(props) {
 										<h5 className="text-left">Temperamento:</h5>
 										<p>{each.temperamento}</p>
 									</Media.Body>
-									<WhatsAppWidget
-										phoneNumber={each.phone_number}
-										companyName={each.fundation_name}
-										message="¡Buen día! 👋🏼        ¿Deseas más información de esta mascota?"
-										textReplyTime="Típicamente responde en una hora"
-										sendButton="Enviar"
-									/>
 								</Col>
 							</Row>
 							<Row className="mt-4">
@@ -80,6 +73,17 @@ export function Cat(props) {
 								<Button variant="dark" onClick={() => goBack()}>
 									Volver
 								</Button>
+							</Row>
+							<Row>
+								<Col className="fixed-bottom">
+									<WhatsAppWidget
+										phoneNumber={each.phone_number}
+										companyName={each.fundation_name}
+										message="¡Buen día! 👋🏼        ¿Deseas más información de esta mascota?"
+										textReplyTime="Típicamente responde en una hora"
+										sendButton="Enviar"
+									/>
+								</Col>
 							</Row>
 						</div>
 					);

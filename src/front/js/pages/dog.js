@@ -40,14 +40,6 @@ export function Dog(props) {
 										<h5 className="text-left">Temperamento:</h5>
 										<p className="text-left">{each.temperamento}</p>
 									</Media.Body>
-									<WhatsAppWidget
-										phoneNumber={each.phone_number}
-										companyName={each.fundation_name}
-										message="¡Buen día! 👋🏼        ¿Deseas más información de esta mascota?"
-										textReplyTime="Típicamente responde en una hora"
-										sendButton="Enviar"
-										className="prueba"
-									/>
 								</Col>
 							</Row>
 							<Row className="mt-4">
@@ -81,6 +73,18 @@ export function Dog(props) {
 									<Button variant="dark" onClick={() => goBack()}>
 										Volver
 									</Button>
+								</Col>
+							</Row>
+							<Row>
+								<Col className="fixed-bottom">
+									<WhatsAppWidget
+										phoneNumber={each.phone_number}
+										companyName={each.fundation_name}
+										message="¡Buen día! 👋🏼        ¿Deseas más información de esta mascota?"
+										textReplyTime="Típicamente responde en una hora"
+										sendButton="Enviar"
+										className="prueba"
+									/>
 								</Col>
 							</Row>
 						</div>

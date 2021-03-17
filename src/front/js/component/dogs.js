@@ -24,10 +24,10 @@ export const Dogs = () => {
 						<>
 							{pets.pet == "perro" ? (
 								<Col className="mt-5 mb-10" md={4} key={i}>
-									<Card>
-										<Card.Img variant="top" src={pets.imageURL} />
+									<Card className="shadow" style={{ width: "18rem" }}>
+										<Card.Img variant="top" src={pets.imageURL} style={{ height: "18rem" }} />
 										<Card.Body>
-											<Card.Title>{pets.pet_name}</Card.Title>
+											<Card.Title className="text-center">{pets.pet_name}</Card.Title>
 											<Card.Text>
 												<p>
 													<strong>Sexo: </strong>

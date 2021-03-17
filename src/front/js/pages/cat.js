@@ -38,8 +38,8 @@ export function Cat(props) {
 								<Col sm>
 									<Media.Body className="text-center">
 										<h5>{each.pet_name}</h5>
-										<p>{each.description}</p>
-										<h5>Temperamento:</h5>
+										<p className="text-justify">{each.description}</p>
+										<h5 className="text-left">Temperamento:</h5>
 										<p>{each.temperamento}</p>
 									</Media.Body>
 									<WhatsAppWidget

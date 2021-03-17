@@ -20,13 +20,13 @@ export const Navbarcentral = () => {
 						<div className="ml-auto">
 							<Link to="/log-in">
 								<button id="iniciar" type="button" className="btn btn-outline-info rounded-pill mr-1">
-									Log In
+									Ingresar
 									<i className="far fa-user ml-2" />
 								</button>
 							</Link>
 							<Link to="/sign-up">
 								<button type="button" className="btn btn-info rounded-pill ml-1">
-									Sign Up
+									Registrarse
 									<i className="fas fa-sign-in-alt ml-2" />
 								</button>
 							</Link>
@@ -40,7 +40,7 @@ export const Navbarcentral = () => {
 								onClick={() => {
 									actions.logOut();
 								}}>
-								Log Out
+								Salir
 								<i className="fas fa-sign-out-alt ml-2"></i>
 							</button>
 						</div>

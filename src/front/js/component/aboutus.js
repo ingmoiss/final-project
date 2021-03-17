@@ -12,10 +12,24 @@ export const AboutUs = () => (
 				<img className="py-1" src={logo} alt="Logo" style={{ width: "150px" }} />
 			</div>
 		</div>
-		<p className="text-start">
-			<strong>Zaguatech</strong> nace como un proyecto de 4 amigos programadores: Luis Diego Larraburo Brenes,
-			David Mora Salazar, Luis Alvarado Fernandez y Moises Navarro; nos complementamos sumando creatividad,
-			esfuerzo y perfección.
+		<p className="text-justify">
+			<strong>Zaguatech</strong> nace como un proyecto de 4 amigos programadores:
+			<a href="https://github.com/LaburgosCR" target="__blank">
+				&nbsp;Luis Diego Larraburo Brenes
+			</a>
+			,
+			<a href="https://github.com/davidmorasalazar" target="__blank">
+				&nbsp; David Mora Salazar
+			</a>
+			,
+			<a href="https://github.com/LuisAlvarado-19" target="__blank">
+				&nbsp; Luis Alvarado Fernandez &nbsp;
+			</a>
+			y
+			<a href="https://github.com/ingmoiss" target="__blank">
+				&nbsp; Moises Navarro
+			</a>
+			; nos complementamos sumando creatividad, esfuerzo y perfección.
 			<br />
 			<strong>Zaguatech</strong> es una web que viene a dar ayuda a las Fundaciones en Costa Rica enfocadas en
 			todos aquellos animales que por muchas razones se encuentran sin hogar y viven en las calles en condiciones

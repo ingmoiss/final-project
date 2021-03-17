@@ -7,7 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			// Use getActions to call a function within a fuction
 			loadDogs: async () => {
-				const url = "https://3001-emerald-catfish-fwavhd5r.ws-us03.gitpod.io/pets";
+				const url = "https://3001-amethyst-donkey-3uo2csuc.ws-us03.gitpod.io/pets";
 				const response = await fetch(url);
 				const data = await response.json();
 				console.log(data);

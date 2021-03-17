@@ -19,64 +19,29 @@ export function Cat(props) {
 		history.goBack();
 	};
 	return (
-		<Container>
-			<Media className="mt-5">
-				{store.pets.map((each, i) => {
-					if (i == intId) {
-						return (
-							<div key={i} id="relative">
-								<Row>
-									<Col sm>
-										<Image
-											width={400}
-											height={300}
-											className="align-self-center mr-3"
-											src={each.imageURL}
-											alt="Generic placeholder"
-											rounded
-										/>
-									</Col>
-									<Col sm>
-										<Media.Body className="text-center">
-											<h5>{each.pet_name}</h5>
-											<p>{each.description}</p>
-											<h5>Temperamento:</h5>
-											<p>{each.temperamento}</p>
-										</Media.Body>
-									</Col>
-								</Row>
-								<Row className="mt-4">
-									<Table responsive="md">
-										<thead>
-											<tr>
-												<th>Nombre de la Fundación</th>
-												<th>Sexo</th>
-												<th>Edad</th>
-												<th>Tamaño</th>
-												<th>Ubicación</th>
-												{/* <th>Temperamento</th> */}
-												<th>Vacunas</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>{each.fundation_name}</td>
-												<td>{each.sexo}</td>
-												<td>{each.edad}</td>
-												<td>{each.tamaño}</td>
-												<td>{each.province}</td>
-												{/* <td>{each.temperamento}</td> */}
-												<td>{each.vacunas ? "Si" : "No"}</td>
-											</tr>
-										</tbody>
-									</Table>
-								</Row>
-								<Row>
-									<Button variant="dark" onClick={() => goBack()}>
-										Volver
-									</Button>
-								</Row>
-								<Row id="estilo" className="ml-10">
+		<Container className="mt-5">
+			{store.pets.map((each, i) => {
+				if (i == intId) {
+					return (
+						<div key={i} id="relative">
+							<Row>
+								<Col sm>
+									<Image
+										width={400}
+										height={300}
+										className="align-self-center mr-3"
+										src={each.imageURL}
+										alt="Generic placeholder"
+										rounded
+									/>
+								</Col>
+								<Col sm>
+									<Media.Body className="text-center">
+										<h5>{each.pet_name}</h5>
+										<p>{each.description}</p>
+										<h5>Temperamento:</h5>
+										<p>{each.temperamento}</p>
+									</Media.Body>
 									<WhatsAppWidget
 										phoneNumber={each.phone_number}
 										companyName={each.fundation_name}
@@ -84,12 +49,42 @@ export function Cat(props) {
 										textReplyTime="Típicamente responde en una hora"
 										sendButton="Enviar"
 									/>
-								</Row>
-							</div>
-						);
-					}
-				})}
-			</Media>
+								</Col>
+							</Row>
+							<Row className="mt-4">
+								<Table responsive="md">
+									<thead>
+										<tr>
+											<th>Nombre de la Fundación</th>
+											<th>Sexo</th>
+											<th>Edad</th>
+											<th>Tamaño</th>
+											<th>Ubicación</th>
+											<th>Vacunas</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{each.fundation_name}</td>
+											<td>{each.sexo}</td>
+											<td>{each.edad}</td>
+											<td>{each.tamaño}</td>
+											<td>{each.province}</td>
+											{/* <td>{each.temperamento}</td> */}
+											<td>{each.vacunas ? "Si" : "No"}</td>
+										</tr>
+									</tbody>
+								</Table>
+							</Row>
+							<Row>
+								<Button variant="dark" onClick={() => goBack()}>
+									Volver
+								</Button>
+							</Row>
+						</div>
+					);
+				}
+			})}
 		</Container>
 	);
 }

@@ -72,11 +72,11 @@ export function Dog(props) {
 									</Table>
 								</Row>
 								<Row>
-									<Button variant="dark" onClick={() => goBack()}>
+									<Button variant="primary" onClick={() => goBack()}>
 										Volver
 									</Button>
 								</Row>
-								<Row id="estilo" className="ml-10">
+								<Row id="estilo">
 									<WhatsAppWidget
 										phoneNumber={each.phone_number}
 										companyName={each.fundation_name}

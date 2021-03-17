@@ -6,38 +6,46 @@ import logo from "../../img/zaguatech.png";
 
 export const Navbarcentral = () => {
 	const { store, actions } = useContext(Context);
-	var loggedIn = store.login;
+	var loggedIn = sessionStorage.getItem("is_logged");
 
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-light bg-light">
 				<Link to="/">
-					<img className="py-1" src={logo} alt="Logo" style={{ width: "90px" }} />
+					<img className="py-1" src={logo} alt="Logo" style={{ width: "100px" }} />
 				</Link>
-				<div className="ml-auto">
-					<div className="dropdown">
-						<button
-							className="btn btn-outline-info rounded-pill dropdown-toggle"
-							type="button"
-							id="dropdownMenuButton"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false">
-							Menú
-						</button>
-						<div className="dropdown-menu mr-5" aria-labelledby="dropdownMenuButton">
-							<a className="dropdown-item" href="#">
-								Action
-							</a>
-							<a className="dropdown-item" href="#">
-								Another action
-							</a>
-							<a className="dropdown-item" href="#">
-								Something else here
-							</a>
+				{
+					(console.log("nav", loggedIn),
+					loggedIn != "true" ? (
+						<div className="ml-auto">
+							<Link to="/log-in">
+								<button id="iniciar" type="button" className="btn btn-outline-info rounded-pill mr-1">
+									Ingresar
+									<i className="far fa-user ml-2" />
+								</button>
+							</Link>
+							<Link to="/sign-up">
+								<button type="button" className="btn btn-info rounded-pill ml-1">
+									Registrarse
+									<i className="fas fa-sign-in-alt ml-2" />
+								</button>
+							</Link>
 						</div>
-					</div>
-				</div>
+					) : (
+						<div className="ml-auto">
+							<button
+								id="cerrar"
+								type="button"
+								className="btn btn-outline-info rounded-pill"
+								onClick={() => {
+									actions.logOut();
+								}}>
+								Salir
+								<i className="fas fa-sign-out-alt ml-2"></i>
+							</button>
+						</div>
+					))
+				}
 			</nav>
 		</div>
 	);

@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			pets: [],
-			login: "false"
+			login: ""
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			// Login funtion
 			loggedIn: () => {
-				let status = sessionStorage.getItem("is_logged");
+				var status = sessionStorage.getItem("is_logged");
 				status != "true" ? setStore({ login: "false" }) : setStore({ login: status });
 			},
 			//loguot funtion

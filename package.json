@@ -76,10 +76,16 @@
 		]
 	},
 	"dependencies": {
+		"@heroku/buildpack-registry": "^1.0.1",
+		"async-file": "^2.0.2",
 		"bootstrap": "^4.6.0",
+		"cli-ux": "^5.5.1",
 		"cloudinary": "^1.25.0",
 		"cloudinary-react": "^1.7.0",
+		"got": "^11.8.2",
+		"heroku-cli-buildpacks": "^0.0.12-beta.3",
 		"jquery": "^3.6.0",
+		"phoenix": "^1.5.8",
 		"popper.js": "^1.16.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",

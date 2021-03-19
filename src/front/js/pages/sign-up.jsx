@@ -108,7 +108,7 @@ export function SignUp() {
 							<input
 								type="text"
 								className="form-control form-control-lg"
-								placeholder="Númbero de teléfono"
+								placeholder="Número de teléfono"
 								required
 								onChange={e => setPhone(e.target.value)}
 							/>

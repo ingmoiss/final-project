@@ -83,6 +83,10 @@
 		"cloudinary": "^1.25.0",
 		"cloudinary-react": "^1.7.0",
 		"got": "^11.8.2",
+<<<<<<< HEAD
+=======
+		"heroku-cli-buildpacks": "^0.0.12-beta.3",
+>>>>>>> 66b70f641bf35a8ec533f2b39cfc0e34a1217aa3
 		"jquery": "^3.6.0",
 		"phoenix": "^1.5.8",
 		"popper.js": "^1.16.1",

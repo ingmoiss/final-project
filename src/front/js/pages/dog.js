@@ -50,8 +50,8 @@ export function Dog(props) {
 											<tr>
 												<th className="text-center">Nombre de la Fundación</th>
 												<th className="text-center">Sexo</th>
-												<th className="text-center">Edad</th>
-												<th className="text-center">Tamaño</th>
+												<th className="text-center">Edad en meses</th>
+												<th className="text-center">Tamaño en CM</th>
 												<th className="text-center">Ubicación</th>
 												<th className="text-center">Vacunas</th>
 											</tr>

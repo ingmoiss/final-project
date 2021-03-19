@@ -50,7 +50,7 @@ export function Cat(props) {
 											<th>Nombre de la Fundación</th>
 											<th>Sexo</th>
 											<th>Edad</th>
-											<th>Tamaño</th>
+											<th>Tamaño en CM</th>
 											<th>Ubicación</th>
 											<th>Vacunas</th>
 										</tr>

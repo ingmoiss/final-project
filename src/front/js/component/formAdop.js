@@ -200,12 +200,13 @@ export const FormAdop = () => {
 										/>
 									</div>
 									<div className="col">
-										<input
-											type="text"
-											className="form-control"
-											placeholder="Sexo"
-											onChange={e => setSexo(e.target.value)}
-										/>
+										<select
+											className="form-control form-control-lg"
+											onChange={e => setSexo(e.target.value)}>
+											<option selected>Sexo</option>
+											<option>Hembra</option>
+											<option>Macho</option>
+										</select>
 									</div>
 									<div className="col">
 										<input

@@ -21,7 +21,7 @@ export function LogIn() {
 			user_name: user_name
 		};
 
-		fetch("https://3001-amethyst-donkey-3uo2csuc.ws-us03.gitpod.io/log-in/", {
+		fetch("https://3001-blue-cattle-jgnu48gm.ws-us03.gitpod.io/log-in/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"

@@ -77,7 +77,7 @@ export const FormAdop = () => {
 					imageURL: res.url
 				};
 				//FETCH POST method
-				fetch("https://3001-amethyst-donkey-3uo2csuc.ws-us03.gitpod.io/pets", {
+				fetch("https://3001-blue-cattle-jgnu48gm.ws-us03.gitpod.io/pets", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"

@@ -195,7 +195,7 @@ export const FormAdop = () => {
 										<input
 											type="number"
 											className="form-control"
-											placeholder="Tamaño"
+											placeholder="Tamaño CM"
 											onChange={e => setTamaño(e.target.value)}
 										/>
 									</div>
@@ -219,7 +219,7 @@ export const FormAdop = () => {
 										<input
 											type="number"
 											className="form-control"
-											placeholder="Edad Aprox"
+											placeholder="Edad Meses"
 											onChange={e => setEdad(e.target.value)}
 										/>
 									</div>

@@ -27,8 +27,7 @@ export function Cat(props) {
 							<Row>
 								<Col sm>
 									<Image
-										width={400}
-										height={300}
+										style={({ maxHeight: "370px" }, { maxWidth: "370px" })}
 										className="align-self-center mr-3"
 										src={each.imageURL}
 										alt="Generic placeholder"

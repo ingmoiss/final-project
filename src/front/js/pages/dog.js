@@ -27,6 +27,7 @@ export function Dog(props) {
 							<Row>
 								<Col md>
 									<Image
+										style={({ maxHeight: "370px" }, { maxWidth: "370px" })}
 										className="align-self-center mr-3 w-100"
 										src={each.imageURL}
 										alt="Generic placeholder"

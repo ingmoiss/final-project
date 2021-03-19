@@ -18,7 +18,7 @@ $ heroku login -i
 ```sh
 $ heroku create <your_application_name>
 ```
-
+$npm i @heroku/buildpack-registry true-myth valid-url -g
 4. Add Python and also node.js capabilities to heroku to be able to use npm on production
 ```
 $ heroku buildpacks:add --index 1 heroku/python
